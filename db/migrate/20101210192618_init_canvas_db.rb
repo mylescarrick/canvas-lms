@@ -252,7 +252,7 @@ class InitCanvasDb < ActiveRecord::Migration
 
     create_table "assignments", :force => true do |t|
       t.string   "title"
-      t.text     "description",                       :limit => 16777215
+      t.text     "description"
       t.datetime "due_at"
       t.datetime "unlock_at"
       t.datetime "lock_at"
@@ -379,7 +379,7 @@ class InitCanvasDb < ActiveRecord::Migration
 
     create_table "calendar_events", :force => true do |t|
       t.string   "title"
-      t.text     "description",      :limit => 16777215
+      t.text     "description"
       t.string   "location_name"
       t.string   "location_address"
       t.datetime "start_at"
@@ -655,7 +655,7 @@ class InitCanvasDb < ActiveRecord::Migration
       t.datetime "updated_at"
       t.string   "hashtag"
       t.boolean  "show_public_context_messages"
-      t.text     "syllabus_body",                   :limit => 16777215
+      t.text     "syllabus_body"
       t.text     "hidden_tabs"
       t.boolean  "allow_student_forum_attachments",                     :default => false
       t.string   "default_wiki_editing_roles"
@@ -774,7 +774,7 @@ class InitCanvasDb < ActiveRecord::Migration
 
     create_table "discussion_topics", :force => true do |t|
       t.string   "title"
-      t.text     "message",                :limit => 16777215
+      t.text     "message"
       t.integer  "context_id", :limit => 8
       t.string   "context_type"
       t.string   "type"
@@ -896,7 +896,7 @@ class InitCanvasDb < ActiveRecord::Migration
       t.boolean  "show_comments"
       t.string   "slug"
       t.string   "url"
-      t.text     "content",                :limit => 16777215
+      t.text     "content"
       t.datetime "created_at"
       t.datetime "updated_at"
     end
@@ -931,7 +931,7 @@ class InitCanvasDb < ActiveRecord::Migration
       t.boolean  "during_tests",                           :default => false
       t.string   "user_agent"
       t.string   "request_method"
-      t.text     "http_env",           :limit => 16777215
+      t.text     "http_env"
       t.string   "subject"
       t.string   "request_context_id"
       t.integer  "account_id", :limit => 8
@@ -1447,11 +1447,11 @@ class InitCanvasDb < ActiveRecord::Migration
       t.integer  "quiz_id", :limit => 8
       t.integer  "quiz_version"
       t.integer  "user_id", :limit => 8
-      t.text     "submission_data",      :limit => 16777215
+      t.text     "submission_data"
       t.integer  "submission_id", :limit => 8
       t.float    "score"
       t.float    "kept_score"
-      t.text     "quiz_data",            :limit => 16777215
+      t.text     "quiz_data"
       t.datetime "started_at"
       t.datetime "end_at"
       t.datetime "finished_at"
@@ -1472,8 +1472,8 @@ class InitCanvasDb < ActiveRecord::Migration
 
     create_table "quizzes", :force => true do |t|
       t.string   "title"
-      t.text     "description",                :limit => 16777215
-      t.text     "quiz_data",                  :limit => 16777215
+      t.text     "description"
+      t.text     "quiz_data"
       t.float    "points_possible"
       t.integer  "context_id", :limit => 8
       t.string   "context_type"
@@ -1511,7 +1511,7 @@ class InitCanvasDb < ActiveRecord::Migration
 
     create_table "report_snapshots", :force => true do |t|
       t.string   "report_type"
-      t.text     "data",        :limit => 16777215
+      t.text     "data"
       t.datetime "created_at"
       t.datetime "updated_at"
     end
@@ -1684,8 +1684,8 @@ class InitCanvasDb < ActiveRecord::Migration
       t.datetime "updated_at"
       t.integer  "attachment_id", :limit => 8
       t.integer  "progress"
-      t.text     "processing_errors",   :limit => 16777215
-      t.text     "processing_warnings", :limit => 16777215
+      t.text     "processing_errors"
+      t.text     "processing_warnings"
     end
 
     create_table "sis_cross_listed_sections", :force => true do |t|
@@ -1759,7 +1759,7 @@ class InitCanvasDb < ActiveRecord::Migration
     add_index "submission_comments", ["submission_id"], :name => "index_submission_comments_on_submission_id"
 
     create_table "submissions", :force => true do |t|
-      t.text     "body",                             :limit => 16777215
+      t.text     "body"
       t.string   "url"
       t.integer  "attachment_id", :limit => 8
       t.string   "grade"
@@ -1911,7 +1911,7 @@ class InitCanvasDb < ActiveRecord::Migration
       t.integer  "versionable_id", :limit => 8
       t.string   "versionable_type"
       t.integer  "number"
-      t.text     "yaml",             :limit => 16777215
+      t.text     "yaml"
       t.datetime "created_at"
     end
 
@@ -1985,7 +1985,7 @@ class InitCanvasDb < ActiveRecord::Migration
     create_table "wiki_pages", :force => true do |t|
       t.integer  "wiki_id", :limit => 8
       t.string   "title"
-      t.text     "body",                     :limit => 16777215
+      t.text     "body"
       t.string   "workflow_state"
       t.string   "recent_editors"
       t.integer  "user_id", :limit => 8

@@ -28,7 +28,7 @@ class CreateDelayedJobs < ActiveRecord::Migration
       # Provides for retries, but still fail eventually.
       table.integer  :attempts, :default => 0
       # YAML-encoded string of the object that will do work
-      table.text     :handler, :limit => 500.kilobytes
+      table.text     :handler
       # reason for last failure (See Note below)
       table.text     :last_error
       # The queue that this job is in
