@@ -1,5 +1,5 @@
 javascript_compressor: closure
-embed_assets: off
+embed_assets: on
 gzip_assets: off
 
 javascripts:
@@ -56,7 +56,7 @@ javascripts:
     - public/javascripts/slickgrid-googlecode/slick.globaleditorlock.js
     - public/javascripts/gradebook_uploads.js
   gradebook_history:
-    - public/javascripts/jquery.metadata.js 
+    - public/javascripts/jquery.metadata.js
     - public/javascripts/gradebook-history.js
   profile:
     - public/javascripts/profile.js
@@ -134,7 +134,7 @@ javascripts:
   sub_accounts:
     - public/javascripts/sub_accounts.js
   aligned_outcomes:
-    - public/javascripts/aligned_outcomes.js    
+    - public/javascripts/aligned_outcomes.js
   full_assignment:
     - public/javascripts/full_assignment.js
   select_content_dialog:
