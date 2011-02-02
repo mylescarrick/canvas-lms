@@ -1,0 +1,1 @@
+$("#content").addClass("padless");$(document).ready(function(){$(window).resize(function(){var a=$("#file_content").offset().top,b=$(window).height();$("#file_content").height(b-a)}).triggerHandler("resize")});

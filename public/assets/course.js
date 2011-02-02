@@ -1,0 +1,1 @@
+$(document).ready(function(){$(".reject_button").click(function(a){if(!confirm("Are you sure you want to reject the invitation to participate in this course?")){a.preventDefault();a.stopPropagation()}})});
