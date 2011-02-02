@@ -21,3 +21,6 @@ SslRequirement.disable_ssl_check = true
 (File.dirname(__FILE__) + "/" + File.basename(__FILE__, ".rb") + "-local.rb").tap { |localfile|
   eval(File.new(localfile).read) if FileTest.exists?(localfile)
 }
+
+
+Sass::Plugin.options[:never_update] = true
