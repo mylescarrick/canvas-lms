@@ -69,7 +69,7 @@ class CountsReport
 
     each_account do |a|
       next if a.external_status == 'test'
-      activity = last_activity(a.id)
+      activity = last_activity(a)
       next unless activity
 
       account = {}
@@ -220,10 +220,8 @@ class CountsReport
     @overview[:totals][:page_views_in_last_month] += account[:page_views_in_last_month]
   end
 
-  def last_activity(account_id)
-    query = "SELECT max(created_at) FROM `#{PageView.table_name}` WHERE account_id = #{account_id}"
-    res = ActiveRecord::Base.connection.execute(query)
-    res.fetch_row[0] rescue nil
+  def last_activity(account)
+    account.page_views.maximum(:created_at)
   end
 
   def get_course_ids(account, course_ids)
