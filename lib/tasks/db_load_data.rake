@@ -19,10 +19,10 @@ namespace :db do
   task :generate_security_key do
     security_conf_path = File.expand_path(File.join(RAILS_ROOT, 'config', 'security.yml'))
     security_conf = YAML.load_file(security_conf_path)
-    if security_conf[RAILS_ENV]["encryption_key"].to_s.length < 20
-      security_conf[RAILS_ENV]["encryption_key"] = ActiveSupport::SecureRandom.hex(64)
-      File.open(security_conf_path, 'w') { |f| YAML.dump(security_conf, f) }
-    end
+    # if security_conf[RAILS_ENV]["encryption_key"].to_s.length < 20
+    #   security_conf[RAILS_ENV]["encryption_key"] = ActiveSupport::SecureRandom.hex(64)
+    #   File.open(security_conf_path, 'w') { |f| YAML.dump(security_conf, f) }
+    # end
   end
 
   desc "Load environment"
